@@ -45,6 +45,7 @@ public class AddData extends AppCompatActivity {
                                 String data = txt.getText().toString().trim();
                                 list.setTxtid(num);
                                 list.setTxt(data);
+
                                 reff.child(String.valueOf(num)).setValue(list);
                                 Toast.makeText(AddData.this,"Data added successfully!!",Toast.LENGTH_LONG).show();
                                 txt.setText("");

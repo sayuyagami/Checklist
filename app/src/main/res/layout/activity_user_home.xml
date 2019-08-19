@@ -10,7 +10,7 @@
 
     <TextView
         android:textSize="28sp"
-        android:textColor="#0288D1"
+        android:textColor="#fff"
         android:layout_margin="10dp"
         android:text="Save Lists"
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:id="@+id/select"
             android:layout_width="113dp"
             android:background="#000"
-            android:textColor="#0288D1"
+            android:textColor="#fff"
             android:layout_height="match_parent"
             android:text="Select all" />
 
@@ -49,7 +49,7 @@
             android:id="@+id/deselect"
             android:layout_width="139dp"
             android:background="#000"
-            android:textColor="#0288D1"
+            android:textColor="#fff"
             android:layout_height="match_parent"
             android:text="Deselct all" />
 
@@ -57,9 +57,9 @@
             android:id="@+id/next"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:background="#480287D0"
-            android:textColor="#fff"
-            android:text="save" />
+            android:background="#AD380E4A"
+            android:text="save"
+            android:textColor="#fff" />
 
     </LinearLayout>
 

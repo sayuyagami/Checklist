@@ -16,7 +16,6 @@ import com.google.firebase.database.ValueEventListener;
 public class Dataview extends AppCompatActivity {
 
     TextView a;
-    ImageView b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +32,8 @@ public class Dataview extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 String data = dataSnapshot.child("txt").getValue(String.class);
-                String img = dataSnapshot.child("image").getValue(String.class);
-                //Uri mUri = Uri.parse(img);
 
                 a.setText(data);
-               // b.setImageURI(mUri);
             }
 
             @Override

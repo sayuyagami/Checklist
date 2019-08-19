@@ -1,7 +1,9 @@
 package com.app.app;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -133,10 +135,12 @@ public class UserHome extends AppCompatActivity {
                                         public void onDataChange(DataSnapshot dataSnapshot) {
                                             for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                                 String slist = ds.child("txt").getValue(String.class);
+                                                SharedPreferences share = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+                                                String num = share.getString("mobileno","");
 
-                                                    dlist.add(slist);
-                                                    reff.child(m_text).child(String.valueOf(finalI)).setValue(dlist.get(finalI));
-
+                                                dlist.add(slist);
+                                                reff.child(num).child(m_text).child(String.valueOf(finalI)).setValue(dlist.get(finalI));
+                                                Toast.makeText(UserHome.this,m_text+" saved",Toast.LENGTH_LONG).show();
                                             }
                                         }
 
@@ -158,7 +162,6 @@ public class UserHome extends AppCompatActivity {
                     });
 
                     builder.show();
-
                 }
             });
     }

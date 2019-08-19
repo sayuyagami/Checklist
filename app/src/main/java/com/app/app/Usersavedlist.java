@@ -1,8 +1,13 @@
 package com.app.app;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -20,6 +25,7 @@ public class Usersavedlist extends AppCompatActivity {
     ArrayList<String> feed = new ArrayList<>();
     DatabaseReference usersdRef;
     ListView listView;
+    public static String listPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +35,16 @@ public class Usersavedlist extends AppCompatActivity {
         listView = findViewById(R.id.lv);
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        usersdRef = rootRef.child("Savedlist");
+        SharedPreferences share = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        String num = share.getString("mobileno","");
+
+        usersdRef = rootRef.child("Savedlist").child(num);
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
-
-
+                    String name = ds.getKey();
+                    feed.add(name);
                 }
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Usersavedlist.this,android.R.layout.simple_list_item_1,feed);
                 listView.setAdapter(arrayAdapter);
@@ -47,5 +56,14 @@ public class Usersavedlist extends AppCompatActivity {
         };
         usersdRef.addListenerForSingleValueEvent(eventListener);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int i,
+                                    final long id) {
+                listPosition = feed.get(i);
+                Intent intent = new Intent(Usersavedlist.this,NextActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

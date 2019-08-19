@@ -60,7 +60,7 @@
             android:layout_marginEnd="138dp"
             android:background="@drawable/custom_button"
             android:text="confirm"
-            android:textColor= "#0000ff" />
+            android:textColor= "#000" />
 
     </RelativeLayout>
 

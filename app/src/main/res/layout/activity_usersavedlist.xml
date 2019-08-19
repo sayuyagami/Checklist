@@ -25,7 +25,7 @@
 
             <ListView
                 android:id="@+id/lv"
-                android:background="#000"
+                android:background="@drawable/buttonpress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5sp"></ListView>
