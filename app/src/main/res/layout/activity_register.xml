@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical"
+    android:background="@drawable/buttonpress"
+    tools:context=".Register">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"></RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="0.5"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/entertext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Enter mobile number"
+            android:textColor="#000"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.5"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/userno"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:digits="0123456789"
+            android:hint="Mobile no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/verifybtn"
+            android:layout_width="132dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/userno"
+            android:layout_marginStart="138dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="138dp"
+            android:background="@drawable/custom_button"
+            android:text="confirm"
+            android:textColor= "#0000ff" />
+
+    </RelativeLayout>
+
+</LinearLayout>

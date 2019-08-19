@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/Mypic"
+        android:icon="@drawable/ic_action_settings"
+        app:showAsAction="always" >
+        <menu>
+            <item
+                android:id="@+id/saved"
+                android:enabled="true"
+                android:title="Saved list" />
+            <item
+                android:id="@+id/logout"
+                android:enabled="true"
+                android:title="Logout" /></menu>
+    </item>
+</menu>
