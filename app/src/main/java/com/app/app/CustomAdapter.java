@@ -96,12 +96,14 @@ public class CustomAdapter  extends BaseAdapter {
                 View tempview = (View) holder.checkBox.getTag(R.integer.btnplusview);
                 TextView tv = (TextView) tempview.findViewById(R.id.a);
                 Integer pos = (Integer)  holder.checkBox.getTag();
+
                 //Toast.makeText(context, "Checkbox "+pos+" clicked!", Toast.LENGTH_SHORT).show();
 
                 if(modelArrayList.get(pos).getSelected()){
                     modelArrayList.get(pos).setSelected(false);
                 }else {
                     modelArrayList.get(pos).setSelected(true);
+
                 }
 
             }
@@ -110,9 +112,9 @@ public class CustomAdapter  extends BaseAdapter {
         return convertView;
     }
 
-    private class ViewHolder {
+    public class ViewHolder {
 
-        protected CheckBox checkBox;
+        public CheckBox checkBox;
         private TextView tvAnimal;
 
     }

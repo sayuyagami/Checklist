@@ -8,12 +8,18 @@
     android:orientation="vertical"
     tools:context=".Dataview">
 
+
+    <ScrollView
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/a"
-        android:layout_margin="20sp"
+        android:padding="10sp"
         android:textSize="20sp"
         android:textColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    </ScrollView>
 
 </LinearLayout>
